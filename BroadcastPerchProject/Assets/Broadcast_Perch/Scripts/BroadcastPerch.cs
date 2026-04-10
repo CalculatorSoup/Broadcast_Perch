@@ -80,6 +80,8 @@ namespace BroadcastPerch
 
             SceneManager.sceneLoaded += SceneSetup;
 
+            RoR2.RoR2Application.onLoadFinished += AddModdedEnemies;
+
         }
 
         public static void AddModdedEnemies()
