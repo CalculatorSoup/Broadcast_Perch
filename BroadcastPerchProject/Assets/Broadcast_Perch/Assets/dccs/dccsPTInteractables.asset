@@ -204,24 +204,6 @@ MonoBehaviour:
     cards:
     - spawnCard:
         _asset: {fileID: 0}
-        _address: f48d76e496db90b44ac25782ce35528a
-        _useDirectReference: 0
-      selectionWeight: 3
-      spawnDistance: 0
-      preventOverhead: 0
-      minimumStageCompletions: 0
-      requiredUnlockableDef:
-        _asset: {fileID: 0}
-        _address: 
-        _useDirectReference: 0
-        _canLoadFromCatalog: 0
-      forbiddenUnlockableDef:
-        _asset: {fileID: 0}
-        _address: 
-        _useDirectReference: 0
-        _canLoadFromCatalog: 0
-    - spawnCard:
-        _asset: {fileID: 0}
         _address: 17d0ba680c7b4a540b1f665928b5f073
         _useDirectReference: 0
       selectionWeight: 1
