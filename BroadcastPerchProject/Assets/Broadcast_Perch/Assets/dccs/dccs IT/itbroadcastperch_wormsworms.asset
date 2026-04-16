@@ -49,7 +49,7 @@ MonoBehaviour:
   suppressPlayerEntry: 0
   suppressNpcEntry: 0
   blockOrbitalSkills: 0
-  validForRandomSelection: 1
+  validForRandomSelection: 0
   allowItemsToSpawnObjects: 0
   preventStageAdvanceCounter: 0
   needSkipDevotionRespawn: 0
