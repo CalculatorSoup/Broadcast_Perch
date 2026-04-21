@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Inner Wood
+    second: {fileID: 2100000, guid: 0e037ce6ffcb5c648b7f98a79b5be0f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Log
     second: {fileID: 2100000, guid: 9852d6813883f36449ed06d0c47df87c, type: 2}
   - first:
@@ -23,7 +28,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Wood
-    second: {fileID: 2100000, guid: 0e037ce6ffcb5c648b7f98a79b5be0f9, type: 2}
+    second: {fileID: 2100000, guid: 8dc9e5506ca0d3f4aa432394589e6e85, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
