@@ -1,3 +1,12 @@
+# 1.1.2
+* Fixed Lemurian Eggs never appearing with Artifact of Devotion enabled
+* Repositioned a tree branch that wasn't fully connected to its tree's trunk
+* Attempted to fix a few particularly egregious texture seams. They still exist but should be much less noticeable now
+  * I didn't really know what I was doing when modeling this map (still don't) so it's kind of a mess. Seams will probably never be completely fixed but I'll probably continue trying to clean up new ones that I find
+
+# 1.1.1
+* Fixed one of the Newt Altar spots being fully submerged underground
+
 # 1.1.0
 * Art pass:
   * The inside of the tree trunks now uses the inner wood texture instead of the bark texture (only just now realized it was weird that the insides of the trees also had a layer of bark..)
