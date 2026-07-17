@@ -44,7 +44,7 @@ namespace BroadcastPerch
 
         public const string Name = "Broadcast_Perch";
 
-        public const string Version = "1.1.2";
+        public const string Version = "1.1.4";
 
         public const string GUID = Author + "." + Name;
 

@@ -1,3 +1,9 @@
+# 1.1.4
+* Attempted to fix an issue where you could get stuck inside a rescue ship
+
+# 1.1.3
+* Accidentally forgot to include the language files in the mod when I uploaded the previous version. Sorry
+
 # 1.1.2
 * Fixed Lemurian Eggs never appearing with Artifact of Devotion enabled
 * Repositioned a tree branch that wasn't fully connected to its tree's trunk
