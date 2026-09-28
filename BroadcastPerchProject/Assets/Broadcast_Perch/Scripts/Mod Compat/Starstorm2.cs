@@ -9,7 +9,7 @@ namespace BroadcastPerch
 {
     public class Starstorm2Compat
     {
-        public static string FindEnemyConfig(string monsterName) //Lamp, Lamp Boss, Acid Bug
+        public static string FindEnemyConfig(string monsterName) //Lamp, Lamp Boss, Acid Bug, Mimic, Clay Monger, Runshroom
         {
             var defstring = "00 - Enemy Disabling.Disable Enemy: " + monsterName;
             var monsterConfig = SS2Config.ConfigMonster.GetConfigEntries();
@@ -48,7 +48,27 @@ namespace BroadcastPerch
                 DirectorAPI.Helpers.AddNewMonsterToStage(wayfarerHolder, false, DirectorAPI.Stage.Custom, BroadcastPerch.simuName);
                 Log.Info("Wayfarer added to Broadcast Perch's spawn pool.");
             }
+            // Mimic
+            var mimicValue = FindEnemyConfig("Mimic");
 
+            if (BroadcastPerch.toggleMimic.Value && mimicValue == "false")
+            {
+                var mimicCard = new RoR2.DirectorCard()
+                {
+                    spawnCard = SS2Assets.LoadAsset<RoR2.InteractableSpawnCard>("iscMimic", (SS2Bundle)17),
+                    spawnDistance = RoR2.DirectorCore.MonsterSpawnDistance.Standard,
+                    selectionWeight = 2
+                };
+
+                var mimicHolder = new DirectorAPI.DirectorCardHolder
+                {
+                    Card = mimicCard,
+                    InteractableCategory = DirectorAPI.InteractableCategory.Chests
+                };
+                DirectorAPI.Helpers.AddNewInteractableToStage(mimicHolder, DirectorAPI.Stage.Custom, BroadcastPerch.mapName);
+                Log.Info("Security Chest added to Broadcast Perch's spawn pool.");
+
+            }
         }
 
     }

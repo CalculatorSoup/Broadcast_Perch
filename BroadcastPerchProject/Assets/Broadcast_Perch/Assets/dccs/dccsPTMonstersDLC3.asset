@@ -35,6 +35,27 @@ MonoBehaviour:
         _useDirectReference: 0
         _canLoadFromCatalog: 0
     selectionWeight: 2
+  - name: Minibosses
+    cards:
+    - spawnCard:
+        _asset: {fileID: 0}
+        _address: 5a79dbd5900f70d459f1535b18adde99
+        _useDirectReference: 0
+      selectionWeight: 1
+      spawnDistance: 0
+      preventOverhead: 0
+      minimumStageCompletions: 5
+      requiredUnlockableDef:
+        _asset: {fileID: 0}
+        _address: 
+        _useDirectReference: 0
+        _canLoadFromCatalog: 0
+      forbiddenUnlockableDef:
+        _asset: {fileID: 0}
+        _address: 
+        _useDirectReference: 0
+        _canLoadFromCatalog: 0
+    selectionWeight: 2
   - name: Basic Monsters
     cards:
     - spawnCard:

@@ -95,7 +95,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1dac36ffb6cccdb4388813ce9cf49295, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4163d145836e33641817719fa61c7db1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -127,11 +127,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SnowNormalTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: dbd3c2675de13d84a9fc88436d0f6ed3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SnowTex:
-        m_Texture: {fileID: 2800000, guid: d566ac64188587249a781a303c03da73, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0533c307cda5e854a8d1fabb305acfa2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SplatmapTex:
@@ -148,7 +148,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DecalLayer: 1
-    - _Depth: 0.267
+    - _Depth: 0.148
     - _DetailNormalMapScale: 1
     - _DirtBias: 0
     - _DirtOn: 0
@@ -209,7 +209,7 @@ Material:
     - _SliceHeight: 5
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
-    - _SnowBias: -0.23
+    - _SnowBias: -0.085
     - _SnowOn: 0
     - _SnowSmoothness: 0
     - _SnowSpecularExponent: 1
@@ -221,7 +221,7 @@ Material:
     - _SplatmapTileScale: 1
     - _SrcBlend: 1
     - _TriplanarOn: 1
-    - _TriplanarTextureFactor: 0.016
+    - _TriplanarTextureFactor: 0.15
     - _UVSec: 0
     - _VertexColorOn: 0
     - _ZWrite: 1

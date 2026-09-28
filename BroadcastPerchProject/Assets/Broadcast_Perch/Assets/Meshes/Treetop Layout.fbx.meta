@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Crossbeam
+    second: {fileID: 2100000, guid: 2f485170f403f1241afff5810c5fe6d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Dish
     second: {fileID: 2100000, guid: 9c19776d03d590b4a8674cf27dc16d26, type: 2}
   - first:
@@ -33,6 +38,11 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Wood
+    second: {fileID: 2100000, guid: 8dc9e5506ca0d3f4aa432394589e6e85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood Transition
     second: {fileID: 2100000, guid: 8dc9e5506ca0d3f4aa432394589e6e85, type: 2}
   materials:
     materialImportMode: 2

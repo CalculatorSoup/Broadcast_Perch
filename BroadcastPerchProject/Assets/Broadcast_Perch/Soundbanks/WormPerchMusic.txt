@@ -1,0 +1,29 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2510754018	WORM_Perch_Play_Music_System			\Default Work Unit\WORM_Perch_Play_Music_System	
+	2837311030	WORM_Perch_Pause_Music			\Default Work Unit\WORM_Perch_Pause_Music	
+	3417517285	WORM_Perch_Unpause_Music			\Default Work Unit\WORM_Perch_Unpause_Music	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	792781730	Music_system			\Default Work Unit\Music_system	
+	3512763202	WORM_Perch_gameplaySongChoice			\Default Work Unit\WORM_Perch_gameplaySongChoice	
+
+State	ID	Name	State Group			Notes
+	89505537	Gameplay	Music_system			
+	580146960	Bossfight	Music_system			
+	748895195	None	Music_system			
+	778026301	SecretLevel	Music_system			
+	2607556080	Menu	Music_system			
+	748895195	None	WORM_Perch_gameplaySongChoice			
+	1426297637	PerchBossMusic	WORM_Perch_gameplaySongChoice			
+	1513424100	PerchMusic	WORM_Perch_gameplaySongChoice			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	151362964	playerHealth			\Default Work Unit\playerHealth	
+	3729143042	Volume_MSX			\Default Work Unit\Volume_MSX	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	854948845	TheTreehouseThatTimeForgot	C:\Users\rcmce\Documents\WwiseProjects\BroadcastPerchMusic\.cache\Windows\SFX\TheTreehouseThatTimeForgot_83EF6940.wem		\Interactive Music Hierarchy\Default Work Unit\WORM_Perch_Music_System\GameplaySongChoice\PerchStage\TheTreehouseThatTimeForgot\TheTreehouseThatTimeForgot		4788
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	854948845	TheTreehouseThatTimeForgot	C:\Users\rcmce\Documents\WwiseProjects\BroadcastPerchMusic\.cache\Windows\SFX\TheTreehouseThatTimeForgot_83EF6940.wem	854948845.wem	\Interactive Music Hierarchy\Default Work Unit\WORM_Perch_Music_System\GameplaySongChoice\PerchStage\TheTreehouseThatTimeForgot\TheTreehouseThatTimeForgot	
+

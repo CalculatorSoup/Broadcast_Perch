@@ -42,7 +42,11 @@
         "ShaderSwapper.dll",
         "FHCSharp.dll",
         "EnemiesReturns.dll",
-        "Starstorm2.dll"
+        "Starstorm2.dll",
+        "AK.Wwise.Unity.API.dll",
+        "AK.Wwise.Unity.MonoBehaviour.dll",
+        "AK.Wwise.Unity.API.WwiseTypes.dll",
+        "MMHOOK_RoR2.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

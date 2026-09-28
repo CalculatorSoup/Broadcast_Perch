@@ -44,7 +44,7 @@ namespace BroadcastPerch
 
         public const string Name = "Broadcast_Perch";
 
-        public const string Version = "1.1.4";
+        public const string Version = "1.2.0";
 
         public const string GUID = Author + "." + Name;
 
@@ -53,18 +53,24 @@ namespace BroadcastPerch
         public static ConfigEntry<bool> enableRegular;
         public static ConfigEntry<bool> enableSimulacrum;
         public static ConfigEntry<bool> stage1Simulacrum;
+        public static ConfigEntry<preferredOST> mapOST;
 
         public static ConfigEntry<bool> toggleSpider;
         public static ConfigEntry<bool> toggleSpitter;
 
         public static ConfigEntry<bool> toggleWayfarer;
+        public static ConfigEntry<bool> toggleMimic;
 
         public static ConfigEntry<bool> toggleBrassMonolith;
 
         public const string mapName = "broadcastperch_wormsworms";
         public const string simuName = "itbroadcastperch_wormsworms";
-        private static GameObject fanPrefab;
 
+        public enum preferredOST
+        {
+            The_Treehouse_that_Time_Forgot,
+            The_Raindrop_that_Fell_to_the_Sky
+        }
 
         private void Awake()
         {
@@ -78,10 +84,18 @@ namespace BroadcastPerch
 
             RoR2.Language.collectLanguageRootFolders += CollectLanguageRootFolders;
 
+            On.RoR2.MusicController.StartIntroMusic += MusicController_StartIntroMusic;
+
             SceneManager.sceneLoaded += SceneSetup;
 
             RoR2.RoR2Application.onLoadFinished += AddModdedEnemies;
 
+        }
+
+        private void MusicController_StartIntroMusic(On.RoR2.MusicController.orig_StartIntroMusic orig, RoR2.MusicController self)
+        {
+            orig(self);
+            AkSoundEngine.PostEvent("WORM_Perch_Play_Music_System", self.gameObject);
         }
 
         public static void AddModdedEnemies()
@@ -92,7 +106,7 @@ namespace BroadcastPerch
             }
             if (IsStarstorm2.enabled)
             {
-                Starstorm2Compat.AddEnemies(); //Wayfarer
+                Starstorm2Compat.AddEnemies(); //Wayfarer, Mimic
             }
             if (IsForgottenRelics.enabled)
             {
@@ -129,12 +143,24 @@ namespace BroadcastPerch
                     ring.layer = 0;
                 }
 
+                GameObject[] miscObjects = { GameObject.Find("RANDOM: Short Center Log/Props/Generator"),
+                                             GameObject.Find("RANDOM: Short Center Log/Props/Generator (2)"),
+                                             GameObject.Find("RANDOM: Short Center Log/Props/Generator (4)")
+                                            };
+                foreach (GameObject miscObject in miscObjects)
+                {
+                    if (miscObject.transform.GetChild(0) != null)
+                    {
+                        miscObject.transform.GetChild(0).GetComponent<MeshRenderer>().sharedMaterial = BroadcastPerchContent.treetopBlueMetal;
+                    }
+                }
+
             }
 
             if (newScene.name == mapName || newScene.name == simuName)
             {
-                Log.Debug("looking for objects");
-
+                AmbienceSetup();
+                BroadcastMusicString();
                 // Swapping out metal materials for various objects. surely there must be a more efficient way to do this. oh well
                 Transform generatorHolder = GameObject.Find("Human Props/Generators").transform;
                 for (int i = 0; i < generatorHolder.childCount; i++)
@@ -148,28 +174,13 @@ namespace BroadcastPerch
                     GameObject tower = towerHolder.GetChild(i).GetChild(0).GetChild(0).gameObject;
                     tower.GetComponent<MeshRenderer>().sharedMaterial = BroadcastPerchContent.treetopMetal;
                 }
-                Transform containerHolder = GameObject.Find("Human Props/Containers").transform;
+                Transform containerHolder = GameObject.Find("Human Props/Shipping Containers").transform;
                 for (int i = 0; i < containerHolder.childCount; i++)
                 {
                     GameObject container = containerHolder.GetChild(i).GetChild(0).gameObject;
                     container.GetComponent<MeshRenderer>().sharedMaterial = BroadcastPerchContent.treetopBlueMetal;
                 }
-                Transform shipPiece = GameObject.Find("RANDOM: Tall Center Log/Props/Ship Piece").transform;
-                if (shipPiece.GetChild(0).GetChild(0).GetChild(0) != null)
-                {
-                    shipPiece.GetChild(0).GetChild(0).GetChild(0).gameObject.GetComponent<MeshRenderer>().sharedMaterial = BroadcastPerchContent.treetopMetal;
-                    shipPiece.GetChild(0).GetChild(0).GetChild(0).gameObject.layer = 11;
-                }
-                Transform shipDebris = GameObject.Find("RANDOM: Short Center Log/Props/Debris (3)").transform;
-                if (shipDebris.GetChild(0) != null)
-                {
-                    shipDebris.GetChild(0).gameObject.GetComponent<MeshRenderer>().sharedMaterial = BroadcastPerchContent.treetopMetal;
-                }
-
-                GameObject[] miscObjects = { GameObject.Find("RANDOM: Short Center Log/Props/Generator"),
-                                             GameObject.Find("RANDOM: Short Center Log/Props/Generator (2)"),
-                                             GameObject.Find("RANDOM: Short Center Log/Props/Generator (4)"),
-                                             GameObject.Find("RANDOM: Tall Center Log/Props/Generator"),
+                GameObject[] miscObjects = { GameObject.Find("RANDOM: Tall Center Log/Props/Generator"),
                                              GameObject.Find("RANDOM: Tall Center Log/Props/Generator (2)"),
                                              GameObject.Find("RANDOM: Tall Center Log/Props/Generator (4)")};
                 foreach (GameObject miscObject in miscObjects)
@@ -179,77 +190,47 @@ namespace BroadcastPerch
                         miscObject.transform.GetChild(0).GetComponent<MeshRenderer>().sharedMaterial = BroadcastPerchContent.treetopBlueMetal;
                     }
                 }
-
                 //Destroy unnecessary light attached to prefab
-                GameObject.Destroy(GameObject.Find("Dish Light/FW_Light2On(Clone)/LightPostLight"));
-
-                //Unused code for editing / retexturing fans. I couldn't get them to work properly, so the map uses Aphelian Sanctuary jump pads instead. very sad and I cry
-                
-                /*
-                Transform fanHolder = GameObject.Find("HOLDER: Jump Pads/Fans").transform;
-                Transform tpRelay = null;
-                if (newScene.name == mapName)
-                {
-                    tpRelay = GameObject.Find("SceneInfo/TP Relay").transform;
-                }
-                for (int i = 0; i < fanHolder.childCount; i++)
-                {
-                    //Log.Debug(fanHolder.GetChild(i).name);
-                    //Log.Debug(fanHolder.GetChild(i).GetChild(0).name);
-                    //GameObject fan = fanHolder.GetChild(i).GetChild(0).gameObject;
-
-
-                    //fan.transform.GetChild(0).GetChild(2).GetComponent<SkinnedMeshRenderer>().sharedMaterial = BroadcastPerchContent.treetopBlueMetal;
-                    //var fanBehavior = fan.transform.GetComponent<RoR2.ChestBehavior>();
-                    //var fanPC = fan.transform.GetComponent<RoR2.PurchaseInteraction>();
-
-                    //fanBehavior.Open();
-                    //fanPC.SetAvailable(false);
-                    
-
-                    //NetworkServer.Spawn(fanHolder.GetChild(i).gameObject);
-                    //NetworkServer.Spawn(fan);
-
-                    if (newScene.name == mapName && tpRelay != null)
-                    {
-                        var tpRelayComponent = tpRelay.GetComponent<RoR2.EntityLogic.TeleporterEventRelay>();
-                        tpRelayComponent.onTeleporterBeginCharging.AddListener(fanBehavior.Open);
-                        tpRelayComponent.onTeleporterBeginCharging.AddListener(delegate { fanPC.SetAvailable(false); });
-
-                    }
-                }
-                */
-                
+                GameObject.Destroy(GameObject.Find("Dish Light/SM_Light3(Clone)/Light/Point Light"));
             }
         
         }
-        
 
-        public static void CreateFanPrefab(ContentPack contentPack)
+        private void AmbienceSetup()
         {
-            var fan = Addressables.LoadAssetAsync<GameObject>(RoR2BepInExPack.GameAssetPathsBetter.RoR2_Base_frozenwall.FW_HumanFan_prefab).WaitForCompletion();
-            fanPrefab = fan.InstantiateClone("TreetopFan", true);
+            GameObject ambience = GameObject.Find("Ambience");
+            if (ambience)
+            {
+                AkBank bank = ambience.GetComponent<AkBank>();
+                AkAmbient[] ambientList = ambience.GetComponents<AkAmbient>();
+                AkAmbient ambient1 = ambientList[0];
+                AkAmbient ambient2 = ambientList[1];
+                if (bank)
+                {
+                    WwiseBankReference lakeSound = Addressables.LoadAssetAsync<WwiseBankReference>("Wwise/B3099A00-993A-4AD4-86FD-EBD151F09FB5.asset").WaitForCompletion();
+                    WwiseEventReference startLakeSound = Addressables.LoadAssetAsync<WwiseEventReference>("Wwise/6C9A5B06-3C87-4DD2-835F-B0F2385B7700.asset").WaitForCompletion();
+                    WwiseEventReference stopSound = Addressables.LoadAssetAsync<WwiseEventReference>("Wwise/6F2ADD1C-BD55-431F-A62F-80CCD5F9631D.asset").WaitForCompletion();
+                    bank.data.WwiseObjectReference = lakeSound;
+                    ambient1.data.WwiseObjectReference = startLakeSound;
+                    ambient2.data.WwiseObjectReference = stopSound;
+                }
+            }
+            else
+            {
+                Log.Error("no ambience :(");
+            }
+        }
 
-            fanPrefab.TryGetComponent(out RoR2.PurchaseInteraction pi);
-            pi.automaticallyScaleCostWithDifficulty = true;
-            pi.cost = 5;
+        private void BroadcastMusicString()
+        {
+            if (!NetworkServer.active) return;
 
-            fanPrefab.transform.GetChild(0).GetChild(2).GetComponent<SkinnedMeshRenderer>().sharedMaterial = BroadcastPerchContent.treetopBlueMetal;
+            string bgSongToken = "WORM_CHAT_BP_SONGPLAYING";
 
-            var particleRenderer1 = fanPrefab.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<ParticleSystem>().main;
-            var particleRenderer2 = fanPrefab.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(1).GetComponent<ParticleSystem>().main;
-            var particleRenderer3 = fanPrefab.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(0).GetComponent<ParticleSystem>().main;
-            var particleRenderer4 = fanPrefab.transform.GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetComponent<ParticleSystem>().main;
-
-            particleRenderer1.startColor = Color.gray;
-            particleRenderer2.startColor = Color.gray;
-            particleRenderer3.startColor = Color.gray;
-            particleRenderer4.startColor = Color.gray;
-
-            fanPrefab = fanPrefab.InstantiateClone("TreetopFan", true);
-
-
-            contentPack.networkedObjectPrefabs.Add(new GameObject[] { fanPrefab });
+            if (BroadcastPerchContent.treetopSceneDef.mainTrack.cachedName == "BroadcastPerchMainMusic")
+            {
+                Chat.SendBroadcastChat(new Chat.SimpleChatMessage { baseToken = bgSongToken });
+            }
         }
 
         private void ConfigSetup()
@@ -269,6 +250,11 @@ namespace BroadcastPerch
                                        "Enable Simulacrum Variant on Stage 1",
                                        false,
                                        "If false, Broadcast Perch will only appear after clearing at least one stage in the Simulacrum, like Commencement.");
+            mapOST =
+                base.Config.Bind<preferredOST>("00 - Stages",
+                                        "Soundtrack - Stage Music",
+                                        preferredOST.The_Treehouse_that_Time_Forgot,
+                                        "Set the stage's soundtrack. 'The Raindrop that Fell to the Sky' was the original track used prior to version 1.2.0.");
             toggleSpider =
                 base.Config.Bind<bool>("01 - Monsters: EnemiesReturns",
                                        "Enable Mechanical Spider",
@@ -289,6 +275,11 @@ namespace BroadcastPerch
                                        "Enable Wayfarer",
                                        true,
                                        "If true, Wayfarers will appear in Broadcast Perch.");
+            toggleMimic =
+                base.Config.Bind<bool>("03 - Monsters: Starstorm 2",
+                                       "Enable Security Chest",
+                                       true,
+                                       "If true, Security Chests (Mimics) will appear in Broadcast Perch.");
         }
     }
 }

@@ -12,7 +12,11 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords:
   - BINARYBLEND
+  - DIRTON
+  - FORCE_SPEC
+  - SPLATMAP
   - TRIPLANAR
+  - USE_VERTEX_COLORS
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -27,11 +31,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BlueChannelNormalTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: eb85d56d5a32f484f893901417be9de7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BlueChannelTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d566ac64188587249a781a303c03da73, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -51,11 +55,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtNormalTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e125374628d88724d89f6d714c36406b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c5b665cf8b8d4dd45957b59064077585, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmTex:
@@ -87,11 +91,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GreenChannelNormalTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: eb85d56d5a32f484f893901417be9de7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GreenChannelTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d566ac64188587249a781a303c03da73, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -127,33 +131,33 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SnowNormalTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e125374628d88724d89f6d714c36406b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SnowTex:
-        m_Texture: {fileID: 2800000, guid: d566ac64188587249a781a303c03da73, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0533c307cda5e854a8d1fabb305acfa2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SplatmapTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e125374628d88724d89f6d714c36406b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BinaryBlendOn: 1
-    - _BlueChannelBias: 0
+    - _BlueChannelBias: -0.52
     - _BlueChannelSmoothness: 0
     - _BumpScale: 1
-    - _ColorsOn: 0
+    - _ColorsOn: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _DecalLayer: 1
-    - _Depth: 0.202
+    - _Depth: 0.51
     - _DetailNormalMapScale: 1
-    - _DirtBias: 0
-    - _DirtOn: 0
+    - _DirtBias: -0.52
+    - _DirtOn: 1
     - _DirtSmoothness: 0
-    - _DirtSpecularExponent: 0
+    - _DirtSpecularExponent: 20
     - _DirtSpecularStrength: 0
     - _DitherOn: 0
     - _DoubleColorsOn: 0
@@ -175,7 +179,7 @@ Material:
     - _FlowSpeed: 1
     - _FlowTextureScaleFactor: 1
     - _FlowmapOn: 0
-    - _ForceSpecOn: 0
+    - _ForceSpecOn: 1
     - _FresnelBoost: 1
     - _FresnelPower: 1
     - _GlossMapScale: 1
@@ -185,7 +189,7 @@ Material:
     - _GradientCenter: 0
     - _GradientSmoothness: 1
     - _GradientWidth: 1
-    - _GreenChannelBias: 0
+    - _GreenChannelBias: -0.63
     - _GreenChannelSmoothness: 0
     - _IgnoreBiasOn: 0
     - _InnerColorIntensity: 0.2
@@ -207,21 +211,21 @@ Material:
     - _SliceAlphaDepth: 0.1
     - _SliceBandHeight: 1
     - _SliceHeight: 5
-    - _Smoothness: 0.263
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
-    - _SnowBias: -0.21
+    - _SnowBias: 0.48
     - _SnowOn: 0
     - _SnowSmoothness: 0
-    - _SnowSpecularExponent: 1
+    - _SnowSpecularExponent: 20
     - _SnowSpecularStrength: 0
     - _SpecularExponent: 0
     - _SpecularHighlights: 1
-    - _SpecularStrength: 0.06
-    - _SplatmapOn: 0
-    - _SplatmapTileScale: 1
+    - _SpecularStrength: 0.2
+    - _SplatmapOn: 1
+    - _SplatmapTileScale: 0.5
     - _SrcBlend: 1
     - _TriplanarOn: 1
-    - _TriplanarTextureFactor: 0.04
+    - _TriplanarTextureFactor: 0.06
     - _UVSec: 0
     - _VertexColorOn: 0
     - _ZWrite: 1
@@ -229,7 +233,7 @@ Material:
     m_Colors:
     - _BaseTexScrollSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _BaseTex_TilingOffset: {r: 1, g: 1, b: 0, a: 0}
-    - _Color: {r: 0.74038804, g: 0.8867924, b: 0.88541436, a: 1}
+    - _Color: {r: 0.8745098, g: 1, b: 1, a: 1}
     - _EmColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlashColor: {r: 0, g: 0, b: 0, a: 1}

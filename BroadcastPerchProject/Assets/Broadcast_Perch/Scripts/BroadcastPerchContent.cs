@@ -25,8 +25,8 @@ namespace BroadcastPerch.Content
     public static class BroadcastPerchContent
     {
 
-        internal const string ScenesAssetBundleFileName = "BroadcastPerchScenes";
-        internal const string AssetsAssetBundleFileName = "BroadcastPerchAssets";
+        internal const string ScenesAssetBundleFileName = "broadcastperchscenes";
+        internal const string AssetsAssetBundleFileName = "broadcastperchassets";
 
         private static AssetBundle _scenesAssetBundle;
         private static AssetBundle _assetsAssetBundle;
@@ -101,10 +101,17 @@ namespace BroadcastPerch.Content
                 yield return null;
             }
 
-            treetopSceneDef.mainTrack = mainTrackDefRequest.Result;
-            treetopSceneDef.bossTrack = bossTrackDefRequest.Result;
+            if (BroadcastPerch.mapOST.Value == BroadcastPerch.preferredOST.The_Treehouse_that_Time_Forgot)
+            {
+                ContentProvider.SetupMusic();
+            }
+            else
+            {
+                treetopSceneDef.mainTrack = mainTrackDefRequest.Result;
+                simuSceneDef.mainTrack = treetopSceneDef.mainTrack;
+            }
 
-            simuSceneDef.mainTrack = treetopSceneDef.mainTrack;
+            treetopSceneDef.bossTrack = bossTrackDefRequest.Result;
             simuSceneDef.bossTrack = treetopSceneDef.bossTrack;
 
             if (BroadcastPerch.enableRegular.Value)

@@ -8,9 +8,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: matITPTWoodTrans
-  m_Shader: {fileID: 4800000, guid: 892febee97f6cdf439912ad371711811, type: 3}
+  m_Shader: {fileID: 4800000, guid: e41e32dafe24707438cba499ffc6a855, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - BINARYBLEND
+  - TRIPLANAR
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -46,6 +48,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DirtNormalTex:
+        m_Texture: {fileID: 2800000, guid: e4e3a2365e9331a49ab8112b40ee0904, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DirtTex:
+        m_Texture: {fileID: 2800000, guid: 0533c307cda5e854a8d1fabb305acfa2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmTex:
@@ -85,7 +95,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ebad9c14f4ea73141a69c96cb9880403, type: 3}
+        m_Texture: {fileID: 2800000, guid: c33c89dab2c5ac54490f797063048970, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -93,7 +103,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 2800000, guid: bc78dd87f96faf047b7ed1c4271fc1f9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7b74745898555de4ab9a07ce2480689d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -116,12 +126,21 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SnowNormalTex:
+        m_Texture: {fileID: 2800000, guid: 7b74745898555de4ab9a07ce2480689d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SnowTex:
+        m_Texture: {fileID: 2800000, guid: 0533c307cda5e854a8d1fabb305acfa2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SplatmapTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BinaryBlendOn: 1
     - _BlueChannelBias: 0
     - _BlueChannelSmoothness: 0
     - _BumpScale: 1
@@ -129,8 +148,13 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DecalLayer: 1
-    - _Depth: 0.2
+    - _Depth: 0.66
     - _DetailNormalMapScale: 1
+    - _DirtBias: -0.11
+    - _DirtOn: 0
+    - _DirtSmoothness: 0
+    - _DirtSpecularExponent: 1
+    - _DirtSpecularStrength: 0
     - _DitherOn: 0
     - _DoubleColorsOn: 0
     - _DstBlend: 0
@@ -157,18 +181,20 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _GradientBiasOn: 0
     - _GradientCenter: 0
     - _GradientSmoothness: 1
     - _GradientWidth: 1
     - _GreenChannelBias: 0
     - _GreenChannelSmoothness: 0
+    - _IgnoreBiasOn: 0
     - _InnerColorIntensity: 0.2
     - _LimbPrimeMask: 1
     - _LimbRemovalOn: 0
     - _Metallic: 0
     - _Mode: 0
     - _ModelHeight: 1
-    - _NormalStrength: 3
+    - _NormalStrength: 0.75
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PrintBias: 0
@@ -181,15 +207,23 @@ Material:
     - _SliceAlphaDepth: 0.1
     - _SliceBandHeight: 1
     - _SliceHeight: 5
-    - _Smoothness: 0
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _SnowBias: -0.09
+    - _SnowOn: 0
+    - _SnowSmoothness: 0
+    - _SnowSpecularExponent: 6.2
+    - _SnowSpecularStrength: 0
     - _SpecularExponent: 1
     - _SpecularHighlights: 1
     - _SpecularStrength: 0
     - _SplatmapOn: 0
     - _SplatmapTileScale: 1
     - _SrcBlend: 1
+    - _TriplanarOn: 1
+    - _TriplanarTextureFactor: 0.15
     - _UVSec: 0
+    - _VertexColorOn: 0
     - _ZWrite: 1
     - _flipVerticalMode: 0
     m_Colors:
@@ -199,6 +233,7 @@ Material:
     - _EmColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlashColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GradientBiasVector: {r: 0, g: 0, b: 0, a: 0}
     - _InnerColor: {r: 0.09999997, g: 0.09999997, b: 0.09999997, a: 1}
     - _TexScrollSpeed: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _VertColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

@@ -15,6 +15,23 @@ MonoBehaviour:
   StagingPaths:
   - <MSUBuildPath>
   url: https://github.com/CalculatorSoup/Broadcast_Perch
+--- !u!114 &-4521925592335605871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b243ff405b33b94dbf5b6775dd9aa33, type: 3}
+  m_Name: Files
+  m_EditorClassIdentifier: 
+  StagingPaths:
+  - <MSUBuildPathPlugins>
+  includeMetaFiles: 0
+  files:
+  - {fileID: 102900000, guid: 088be8af60d0a494d95303f986013971, type: 3}
 --- !u!114 &-732514325962398760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +108,7 @@ MonoBehaviour:
   - {fileID: 365718730013553393}
   - {fileID: -713757896069394590}
   - {fileID: -696405432442314894}
+  - {fileID: -4521925592335605871}
   - {fileID: -6465034321272946658}
   identity: {fileID: 171841700590212042}
   QuickAccess: 1
@@ -111,8 +129,9 @@ MonoBehaviour:
   Author: wormsworms
   Name: Broadcast_Perch
   Description: An alternate Stage 2 map with a vertical layout, set in a birch tree
-    canopy littered with debris. Also comes with a Simulacrum variant!
-  Version: 1.1.4
+    canopy littered with debris. Includes a Simulacrum variant and music by Cane
+    B!
+  Version: 1.2.0
   Dependencies:
   - {fileID: 11400000, guid: 2d4d09ec817c24698d35dc9bf0704fdc, type: 2}
   - {fileID: 11400000, guid: f0d760e9d4649854da675f3b2978b41b, type: 2}
@@ -124,6 +143,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 184f0fdf3edcd6bad171410f4e0fd947, type: 2}
   - {fileID: 11400000, guid: 48f050b3512173aba0a952f846a557fa, type: 2}
   - {fileID: 11400000, guid: bff73382628f698c89c1d9ae43c8f350, type: 2}
+  - {fileID: 11400000, guid: 2f0230b12529cadf82e6b0db93950626, type: 2}
 --- !u!114 &365718730013553393
 MonoBehaviour:
   m_ObjectHideFlags: 0

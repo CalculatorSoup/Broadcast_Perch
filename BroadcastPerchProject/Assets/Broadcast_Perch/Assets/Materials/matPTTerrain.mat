@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BlueChannelTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0533c307cda5e854a8d1fabb305acfa2, type: 3}
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GreenChannelTex:
-        m_Texture: {fileID: 2800000, guid: d566ac64188587249a781a303c03da73, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0533c307cda5e854a8d1fabb305acfa2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:

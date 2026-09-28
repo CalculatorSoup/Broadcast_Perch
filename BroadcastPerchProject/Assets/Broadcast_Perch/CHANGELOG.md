@@ -1,3 +1,25 @@
+# 1.2.0
+* Added a unique music track - 'The Treehouse that Time Forgot' by Cane B! You can find it along with his other work on [YouTube](https://www.youtube.com/@caneb4) and [SoundCloud](https://soundcloud.com/vgmcb)! Thanks to Cane B for letting me use it for the stage!
+    * Also added dependency on R2API Sound
+* **Art pass 2:**
+  * Remodeled the trees and branches: they're higher poly and generally look a bit better. There are also far, far fewer noticeable texture seams (ideally none)
+  * Remodeled metal scaffolding to look more scrappy and cobbled together; it also actually has metal beams holding it up, rather than just floating in the air
+  * All materials/textures in the map were updated to look a bit nicer. The moss coating on metal objects in particular was significantly improved, I think
+  * Replaced the Aphelian Sanctuary launch pads with new ones unique to this map
+  * Updated the stage's fog to make transitions between fog levels less abrupt. Also, distant fog is thicker and creates a silhouette on background objects which, I think, looks 'Cool' ,
+  * Added sharp splintered wood to the edges of chopped logs and holes
+* **Layout changes:**
+  * Added boxes and platforms to some of the tree interiors that were previously mostly empty
+  * Added shelves to the chopped tree which previously had a weird arch made of crates on it. You can jump on boxes to reach higher shelves in some spots
+  * Added a fourth Newt Altar location atop a shelf
+  * Simulacrum: Raised the lowest tree upward. The center tree can never be short. Added a couple platforms on one corner of the satellite dish
+    * This was an attempt to make the Void Focus crab move in such a way that it's easier to follow but it still sometimes just floats upward in a weird unpredictable way. Maybe it'll do that less now, at least,,,
+  * Simulacrum: Added a couple jump pads below the satellite dish to try and make it easier to get back on without trudging through void fog if you fall off
+* **Other changes:**
+  * Increased Jellyfish spawn distance (Standard -> Far)
+  * Added Solus Control Units and Solus Transporters (both after looping)
+  * Starstorm 2: Security Chests (Mimics) can now appear in the stage,! (also added a config option to toggle them)
+
 # 1.1.4
 * Attempted to fix an issue where you could get stuck inside a rescue ship
 

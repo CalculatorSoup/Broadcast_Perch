@@ -70,6 +70,24 @@ MonoBehaviour:
         _address: 
         _useDirectReference: 0
         _canLoadFromCatalog: 0
+    - spawnCard:
+        _asset: {fileID: 0}
+        _address: b79fc0712303aa54c9d50ab51987a66e
+        _useDirectReference: 0
+      selectionWeight: 1
+      spawnDistance: 0
+      preventOverhead: 0
+      minimumStageCompletions: 5
+      requiredUnlockableDef:
+        _asset: {fileID: 0}
+        _address: 
+        _useDirectReference: 0
+        _canLoadFromCatalog: 0
+      forbiddenUnlockableDef:
+        _asset: {fileID: 0}
+        _address: 
+        _useDirectReference: 0
+        _canLoadFromCatalog: 0
     selectionWeight: 2
   - name: Minibosses
     cards:
@@ -153,7 +171,7 @@ MonoBehaviour:
         _address: 4b3ec516db7849f4d91c17e61f50c3b0
         _useDirectReference: 0
       selectionWeight: 1
-      spawnDistance: 0
+      spawnDistance: 2
       preventOverhead: 0
       minimumStageCompletions: 0
       requiredUnlockableDef:

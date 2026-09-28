@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F99E6076-11D6-1EB1-CAB8-84A08A558539}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="151362964" Name="playerHealth"/>
+				<GameParameter Id="1010989040" Name="teleporterPlayerStatus"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
+				<GameParameter Id="3695994288" Name="Volume_Master"/>
+				<GameParameter Id="3729143042" Name="Volume_MSX"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="549431000" Name="bossStatus">
+					<States>
+						<State Id="655265632" Name="alive"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="2044049779" Name="dead"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="792781730" Name="Music_system">
+					<States>
+						<State Id="89505537" Name="Gameplay"/>
+						<State Id="580146960" Name="Bossfight"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="778026301" Name="SecretLevel"/>
+						<State Id="2607556080" Name="Menu"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="3512763202" Name="WORM_Perch_gameplaySongChoice">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="1426297637" Name="PerchBossMusic"/>
+						<State Id="1513424100" Name="PerchMusic"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="2022504901" Type="User" Language="SFX" Hash="{0065E8F7-6D49-63E1-DDE2-2EBA1A485971}">
+			<ShortName>WormPerchMusic</ShortName>
+			<Path>WormPerchMusic.bnk</Path>
+			<Media>
+				<File Id="854948845" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>TheTreehouseThatTimeForgot.wav</ShortName>
+					<Path>Media/854948845.wem</Path>
+					<CachePath>SFX/TheTreehouseThatTimeForgot_83EF6940.wem</CachePath>
+					<PrefetchSize>4788</PrefetchSize>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2837311030" Name="WORM_Perch_Pause_Music">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="792781730" Id="89505537"/>
+							<Children>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="3512763202" Id="1513424100"/>
+									<MediaRefs>
+										<MediaRef Id="854948845"/>
+									</MediaRefs>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="2510754018" Name="WORM_Perch_Play_Music_System">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="792781730" Id="89505537"/>
+							<Children>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="3512763202" Id="1513424100"/>
+									<MediaRefs>
+										<MediaRef Id="854948845"/>
+									</MediaRefs>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="3417517285" Name="WORM_Perch_Unpause_Music">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="792781730" Id="89505537"/>
+							<Children>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="3512763202" Id="1513424100"/>
+									<MediaRefs>
+										<MediaRef Id="854948845"/>
+									</MediaRefs>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="151362964" Name="playerHealth"/>
+				<GameParameter Id="3729143042" Name="Volume_MSX"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="792781730" Name="Music_system">
+					<States>
+						<State Id="89505537" Name="Gameplay"/>
+						<State Id="580146960" Name="Bossfight"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="778026301" Name="SecretLevel"/>
+						<State Id="2607556080" Name="Menu"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="3512763202" Name="WORM_Perch_gameplaySongChoice">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="1426297637" Name="PerchBossMusic"/>
+						<State Id="1513424100" Name="PerchMusic"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{92C860A9-3200-71FD-2597-F34F16981468}</FileHash>
+</SoundBanksInfo>

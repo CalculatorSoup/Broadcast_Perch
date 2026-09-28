@@ -8,9 +8,13 @@ I tried to design this map with Eclipse and Artifact of Frailty in mind, but fal
 
 ![](https://github.com/CalculatorSoup/Broadcast_Perch/blob/main/BroadcastPerchProject/Assets/previewTrunk.png?raw=true)
 
+# Music
+
+Broadcast Perch has a unique music track, '[The Treehouse that Time Forgot](https://www.youtube.com/watch?v=iW1v8YJJS1E)' by Cane B - you can find it, as well as his other work, on [YouTube](https://www.youtube.com/@caneb4) and [SoundCloud](https://soundcloud.com/vgmcb)!
+
 # Simulacrum
 
-Broadcast Perch also comes with a Void replication, exclusive to SotV's Simulacrum gamemode. The vertical layout makes it a bit more difficult and awkward to navigate compared to other Simulacrum maps, so it can only appear after the first stage by default.
+Broadcast Perch also comes with a Void replication, exclusive to SotV's Simulacrum gamemode. The Simulacrum version's layout is less vertical, but still a bit awkward to navigate compared to other Simulacrum maps, so it can only appear after the first stage by default.
 
 ![](https://github.com/CalculatorSoup/Broadcast_Perch/blob/main/BroadcastPerchProject/Assets/previewSimulacrum.png?raw=true)
 
@@ -23,7 +27,7 @@ Broadcast Perch also comes with a Void replication, exclusive to SotV's Simulacr
   - Modded enemy toggles
 - Modded enemies can appear if their respective mod is enabled 
   - [EnemiesReturns](https://thunderstore.io/package/Risky_Sleeps/EnemiesReturns/): Mechanical Spider, Spitter
-  - [Starstorm 2](https://thunderstore.io/package/TeamMoonstorm/Starstorm2/): Wayfarer
+  - [Starstorm 2](https://thunderstore.io/package/TeamMoonstorm/Starstorm2/): Wayfarer, Security Chest
   - [ForgottenRelics](https://thunderstore.io/package/pseudopulse/RelicsFix/): Brass Monolith (after looping)
 
 # Bugs / Issues
